@@ -5,7 +5,7 @@
     <head>
         <!-- web information -->
         <meta charset="utf-8">
-        <title>Andrew Vo</title>
+        <title id="hello_title"></title>
         <meta name="description" content="Official Site of Andrew Vo">
         <meta name="author" content="Andrew Vo">
 
@@ -16,6 +16,7 @@
         <link rel="stylesheet" href="css/stylesheet.css">
         <link rel="stylesheet" href="css/media-queries.css">
         <link rel="stylesheet" href="css/magnific-popup.css">
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
         <script src="js/modernizr.js"></script>
         <!-- website icon -->
@@ -58,8 +59,8 @@
         <div class="row banner">
             <div class="banner-text">
                 <h1 class="responsive-headline" id="hello" style="font-size: 65px;"></h1>
-                <h3 style="color:white">Aspiring <span style="color:#F7DC6F;">data scientist</span> &amp;
-                     planked tanks <span style="color:#F7DC6F;">enthusiast</span>
+                <h3 span style="color:white"><span style="background-color: #696e69">Aspiring <span style="color:#F7DC6F;">data scientist</span> &amp;
+                    planked tanks <span style="color:#F7DC6F;">enthusiast</span></span>
                     <ul class="social">
                         <li><a href="https://www.linkedin.com/in/andrew-vo-176089106/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
                         <li><a href="https://github.com/atv32" target="_blank"><i class="fa fa-github"></i></a></li>
@@ -81,11 +82,11 @@
 
             <div class="nine columns main-col">
                 <h2>About</h2>
-                <b>My passions is to do stuff with data</b><br><br>
-                I'm Philly native who likes a nice Wawa hoogie for lunch.
+                <b>Hi, my name is Andrew Vo!</b><br><br>
+                I am a Philly native who likes a nice Wawa hoogie for lunch.
                 My interests fall in the realm of statistical machine learning, predictive modeling and visualizations.
                 <br><br>
-                I aspire to find a way to use my skills to better help those around me and make sense of untapped data in the world.
+                I aspire to become an accomplished analyst, data science or data engineer of some sort in the future.
                 <br>
                 When I'm not playing with data, I enjoy weight lifting, cooking, and spending quality time with friends and family.
                 <br><br>
@@ -274,16 +275,24 @@
     <script src="js/init.js"></script>
     <script type="text/javascript">
         "use strict";function _classCallCheck(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}var TextScramble=function(){function t(e){_classCallCheck(this,t),this.el=e,this.chars="!<>-_\\/[]{}—=+*^?#________",this.update=this.update.bind(this)}return t.prototype.setText=function(t){var e=this,a=this.el.innerText,r=Math.max(a.length,t.length),s=new Promise(function(t){return e.resolve=t});this.queue=[];for(var h=0;r>h;h++){var n=a[h]||"",i=t[h]||"",o=Math.floor(40*Math.random()),u=o+Math.floor(40*Math.random());this.queue.push({from:n,to:i,start:o,end:u})}return cancelAnimationFrame(this.frameRequest),this.frame=0,this.update(),s},t.prototype.update=function(){for(var t="",e=0,a=0,r=this.queue.length;r>a;a++){var s=this.queue[a],h=s.from,n=s.to,i=s.start,o=s.end,u=s["char"];this.frame>=o?(e++,t+=n):this.frame>=i?((!u||Math.random()<.28)&&(u=this.randomChar(),this.queue[a]["char"]=u),t+='<span class="dud">'+u+"</span>"):t+=h}this.el.innerHTML=t,e===this.queue.length?this.resolve():(this.frameRequest=requestAnimationFrame(this.update),this.frame++)},t.prototype.randomChar=function(){return this.chars[Math.floor(Math.random()*this.chars.length)]},t}();
-        var phrases = ["Andrew Vo", "Automation", "Data Science Enthusiast", "アンドリュー・ヴォー"];
-        var fx = new TextScramble(document.getElementById("hello"));
+        var phrases1 = ["Andrew Vo", "Automation", "Data Science", "アンドリュー・ヴォー"];
+        var phrases2 = ["Detailed Oriented", "Data-Driven", "Curious Mind", "Search for Better", "Go Getter"];
+        var fx1 = new TextScramble(document.getElementById("hello"));
+        var fx2 = new TextScramble(document.getElementById("hello_title"));
         var counter = 0;
-        var next = function next() {
-            fx.setText(phrases[counter]).then(function () {
-                setTimeout(next, 1200);
+        var next1 = function next() {
+            fx1.setText(phrases1[counter]).then(function () {
+                setTimeout(next, 3750);
             });
-            counter = (counter + 1) % phrases.length;
+            counter = (counter + 1) % phrases1.length;
         };
-        next();
+        var next2 = function next() {
+            fx2.setText(phrases2[counter]).then(function () {
+                setTimeout(next, 3000);
+            });
+            counter = (counter + 1) % phrases2.length;
+        };
+        next2();
+        next1();
     </script>
-    </body>
-</html>
+
