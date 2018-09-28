@@ -5,7 +5,7 @@
     <head>
         <!-- web information -->
         <meta charset="utf-8">
-        <title id="hello_title"></title>
+        <title>Retrieving Metadata . . .</title>
         <meta name="description" content="Official Site of Andrew Vo">
         <meta name="author" content="Andrew Vo">
 
@@ -20,7 +20,7 @@
 
         <script src="js/modernizr.js"></script>
         <!-- website icon -->
-        <link rel="icon" href="https://raw.githubusercontent.com/atv32/atv32.github.io/master/images/favicon.ico">
+        <link rel="icon" href="https://raw.githubusercontent.com/atv32/old_website/master/images/favicon.ico">
 
         <style>
             div {
@@ -59,8 +59,8 @@
         <div class="row banner">
             <div class="banner-text">
                 <h1 class="responsive-headline" id="hello" style="font-size: 65px;"></h1>
-                <h3 span style="color:white"><span style="background-color: #696e69">Aspiring <span style="color:#F7DC6F;">data scientist</span> &amp;
-                    planked tanks <span style="color:#F7DC6F;">enthusiast</span></span>
+                <h3 span style="color:white">Aspiring <span style="color:#F7DC6F;">data scientist</span> &amp;
+                    planked tanks <span style="color:#F7DC6F;">enthusiast</span>
                     <ul class="social">
                         <li><a href="https://www.linkedin.com/in/andrew-vo-176089106/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
                         <li><a href="https://github.com/atv32" target="_blank"><i class="fa fa-github"></i></a></li>
@@ -68,7 +68,7 @@
                     </ul>
                 </h3></div>
         </div>
-        <p class="scrolldown"><a class="smoothscroll" href="#about"><i class="icon-down-circle"></i></a></p>
+        <p class="scrolldown"><a class="smoothscroll" href="#about"><i><img height="50" width="50" src="img/down_arrow.png"></i></a></p>
 
     </header>
 
@@ -276,9 +276,7 @@
     <script type="text/javascript">
         "use strict";function _classCallCheck(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}var TextScramble=function(){function t(e){_classCallCheck(this,t),this.el=e,this.chars="!<>-_\\/[]{}—=+*^?#________",this.update=this.update.bind(this)}return t.prototype.setText=function(t){var e=this,a=this.el.innerText,r=Math.max(a.length,t.length),s=new Promise(function(t){return e.resolve=t});this.queue=[];for(var h=0;r>h;h++){var n=a[h]||"",i=t[h]||"",o=Math.floor(40*Math.random()),u=o+Math.floor(40*Math.random());this.queue.push({from:n,to:i,start:o,end:u})}return cancelAnimationFrame(this.frameRequest),this.frame=0,this.update(),s},t.prototype.update=function(){for(var t="",e=0,a=0,r=this.queue.length;r>a;a++){var s=this.queue[a],h=s.from,n=s.to,i=s.start,o=s.end,u=s["char"];this.frame>=o?(e++,t+=n):this.frame>=i?((!u||Math.random()<.28)&&(u=this.randomChar(),this.queue[a]["char"]=u),t+='<span class="dud">'+u+"</span>"):t+=h}this.el.innerHTML=t,e===this.queue.length?this.resolve():(this.frameRequest=requestAnimationFrame(this.update),this.frame++)},t.prototype.randomChar=function(){return this.chars[Math.floor(Math.random()*this.chars.length)]},t}();
         var phrases1 = ["Andrew Vo", "Automation", "Data Science", "アンドリュー・ヴォー"];
-        var phrases2 = ["Detailed Oriented", "Data-Driven", "Curious Mind", "Search for Better", "Go Getter"];
         var fx1 = new TextScramble(document.getElementById("hello"));
-        var fx2 = new TextScramble(document.getElementById("hello_title"));
         var counter = 0;
         var next1 = function next() {
             fx1.setText(phrases1[counter]).then(function () {
@@ -286,13 +284,6 @@
             });
             counter = (counter + 1) % phrases1.length;
         };
-        var next2 = function next() {
-            fx2.setText(phrases2[counter]).then(function () {
-                setTimeout(next, 3000);
-            });
-            counter = (counter + 1) % phrases2.length;
-        };
-        next2();
         next1();
     </script>
 
